@@ -3,298 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClipGG Web Tools Directory - Free Browser Utilities</title>
-    <meta name="description" content="Access the official ClipGG web tools index. 100% private browser tools for creators, editors, and writers. Image compressor, subtitle cleaners, and audio extractors.">
+    <title>ClipGG Developer Tools Hub - Free Browser Utilities</title>
+    <meta name="description" content="Official alternative high-speed index for ClipGG tools. Access 100% private, free browser-based tools for creators, editors, and writers.">
     <style>
-        :root {
-            --bg-main: #090d16;
-            --bg-card: #131b2e;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-purple: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-green: #10b981;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.5;
-            margin: 0;
-            padding: 0 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 60px auto;
-        }
-
-        /* HEADER SECTION */
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-size: 42px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff 30%, var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* HERO CTA */
-        .hero-cta {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 50px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-cta h2 { margin-top: 0; font-size: 24px; color: #fff; }
-
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
-            filter: brightness(1.1);
-        }
-
-        /* GRID ARCHITECTURE */
-        .category-title {
-            font-size: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-blue);
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--accent-purple);
-            padding-left: 12px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(139, 92, 246, 0.4);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .card h3 {
-            margin: 0 0 10px 0;
-            font-size: 19px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
-            flex-grow: 1;
-        }
-
-        .badge {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 2px 8px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.05);
-            color: var(--text-muted);
-        }
-
-        .btn-secondary {
-            display: block;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-color);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 13px;
-            text-align: center;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--accent-blue);
-        }
-
-        footer {
-            margin-top: 80px;
-            padding: 35px 0;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        footer a { color: #fff; text-decoration: none; }
+        :root { --bg:#090d16; --card:#131b2e; --border:rgba(255,255,255,0.08); --text:#f3f4f6; --muted:#9ca3af; --purple:#8b5cf6; --blue:#3b82f6; }
+        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); margin:0; padding:0 20px; }
+        .container { max-width: 900px; margin: 40px auto; }
+        nav { display:flex; gap:15px; border-bottom:1px solid var(--border); padding-bottom:15px; margin-bottom:30px; justify-content:center; flex-wrap:wrap; }
+        nav a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; }
+        nav a:hover, nav a.active { color:#fff; text-shadow: 0 0 10px var(--purple); }
+        header { text-align:center; margin-bottom:40px; }
+        h1 { font-size:36px; background:linear-gradient(135deg, #fff, #666); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .hero { background:linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.1)); border:1px solid rgba(139,92,246,0.2); border-radius:12px; padding:30px; text-align:center; margin-bottom:30px; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; }
+        .card:hover { border-color:var(--purple); transform:translateY(-2px); transition:0.2s; }
+        .btn { display:inline-block; background:linear-gradient(135deg, var(--purple), var(--blue)); color:#fff; text-decoration:none; font-weight:700; padding:12px 24px; border-radius:6px; text-align:center; margin-top:15px; }
+        .btn-sec { background:rgba(255,255,255,0.05); border:1px solid var(--border); font-size:13px; padding:8px; }
+        .btn-sec:hover { border-color:var(--blue); background:rgba(255,255,255,0.1); }
+        footer { margin-top:60px; text-align:center; font-size:12px; color:var(--muted); border-top:1px solid var(--border); padding-top:20px; }
     </style>
 </head>
 <body>
-
     <div class="container">
+        <nav>
+            <a href="/" class="active">🏠 Hub</a>
+            <a href="/image-compressor.html">🖼️ Image Compressor</a>
+            <a href="/word-counter.html">📜 Word Counter</a>
+            <a href="/subtitle-tools.html">🧹 Subtitle Tools</a>
+            <a href="/youtube-tools.html">▶️ YT Tools</a>
+        </nav>
         <header>
-            <h1>ClipGG Creator Directory</h1>
-            <p class="subtitle">100% private browser-based utilities for lightning-fast digital asset optimization and text workflows.</p>
+            <h1>ClipGG Satellite Network</h1>
+            <p style="color:var(--muted)">High-performance CDN mirror and directory layout mapping.</p>
         </header>
-
-        <div class="hero-cta">
-            <h2>Access the Full Platform Hub</h2>
-            <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">Run all technical media conversion and rendering tasks safely with zero data collection configurations.</p>
-            <a href="https://clipgg.uk/en" class="btn-primary">Launch ClipGG Core Web App</a>
+        <div class="hero">
+            <h2>Production Application Gateway</h2>
+            <p style="color:var(--muted); font-size:14px;">Looking for the fully responsive localized web layouts? Launch the core application cluster instantly.</p>
+            <a href="https://clipgg.uk/en" class="btn">Go to ClipGG Official Platform 🚀</a>
         </div>
-
-        <!-- CATEGORY 1: MEDIA TOOLS -->
-        <div class="category-title">🖼️ Media & Graphics Toolkit</div>
         <div class="grid">
             <div class="card">
-                <span class="badge">Local</span>
-                <h3>Bulk Image Compressor</h3>
-                <p>Optimize JPEG, PNG, and WebP arrays inside your browser frame using HTML5 Canvas execution algorithms. Retain core metrics.</p>
-                <a href="https://clipgg.uk/en/" class="btn-secondary">Open Compressor</a>
+                <h3>Image Compressor</h3>
+                <p style="color:var(--muted); font-size:13px">Client-side browser batch compressor optimized for modern WebP, PNG, and JPEG structures.</p>
+                <a href="/image-compressor.html" class="btn btn-sec">Explore Node</a>
             </div>
             <div class="card">
-                <span class="badge">Audio</span>
-                <h3>Audio Extractor</h3>
-                <p>Strip audio tracks and custom vocal layers out of massive video formats locally without cloud upload buffers.</p>
-                <a href="https://clipgg.uk/en/audio-extractor/" class="btn-secondary">Extract Audio</a>
+                <h3>Word Counter</h3>
+                <p style="color:var(--muted); font-size:13px">Live syntax analyzer mapping word weights, paragraph cuts, and string length metrics.</p>
+                <a href="/word-counter.html" class="btn btn-sec">Explore Node</a>
             </div>
             <div class="card">
-                <span class="badge">Video</span>
-                <h3>Aspect Ratio Resizer</h3>
-                <p>Reframe static layers or video dimensions automatically to support TikTok layouts, Reels, and YouTube Shorts frameworks.</p>
-                <a href="https://clipgg.uk/en/aspect-ratio-resizer/" class="btn-secondary">Resize Dimensions</a>
-            </div>
-            <div class="card">
-                <span class="badge">Graphic</span>
-                <h3>Thumbnail Downloader</h3>
-                <p>Fetch ultra-high-definition content graphics and thumbnail elements straight from any indexed public video streaming link.</p>
-                <a href="https://clipgg.uk/en/thumbnail-downloader/" class="btn-secondary">Download Assets</a>
+                <h3>Subtitle Tools</h3>
+                <p style="color:var(--muted); font-size:13px">SRT to WebVTT matrix translation layers with automated time-code cleaning scripts.</p>
+                <a href="/subtitle-tools.html" class="btn btn-sec">Explore Node</a>
             </div>
         </div>
-
-        <!-- CATEGORY 2: TEXT & SUBTITLES -->
-        <div class="category-title">📜 Subtitle & Text Frameworks</div>
-        <div class="grid">
-            <div class="card">
-                <span class="badge">SEO</span>
-                <h3>Text Word Counter</h3>
-                <p>Calculate dynamic character layouts, word volumes, paragraph blocks, and real-time density matrix profiles via local Javascript.</p>
-                <a href="https://clipgg.uk/en/word-counter/" class="btn-secondary">Count Text Data</a>
-            </div>
-            <div class="card">
-                <span class="badge">Parser</span>
-                <h3>SRT Subtitle Cleaner</h3>
-                <p>Wipe technical timestamp nodes, positioning tags, and formatting arrays from closed-caption structures to build raw text files.</p>
-                <a href="https://clipgg.uk/en/srt-cleaner/" class="btn-secondary">Clean Caption Files</a>
-            </div>
-            <div class="card">
-                <span class="badge">Format</span>
-                <h3>SRT ↔ VTT Converter</h3>
-                <p>Instantly map cross-conversions between modern WebVTT paths and classic SRT subtitle layouts with zero data overhead.</p>
-                <a href="https://clipgg.uk/en/srt-vtt-converter/" class="btn-secondary">Convert Formats</a>
-            </div>
-            <div class="card">
-                <span class="badge">Preview</span>
-                <h3>YouTube Title Validator</h3>
-                <p>Simulate exactly how script parameters and metadata fields present in global index loops to maximize CTR indexes.</p>
-                <a href="https://clipgg.uk/en/youtube-validator/" class="btn-secondary">Validate Meta</a>
-            </div>
-        </div>
-
-        <!-- CATEGORY 3: CREATOR STRATEGY -->
-        <div class="category-title">🎬 Video Production Utilities</div>
-        <div class="grid">
-            <div class="card">
-                <span class="badge">Script</span>
-                <h3>Teleprompter Engine</h3>
-                <p>Professional script reader tool with adjustable font pacing and layout configs to maintain direct video recording focus.</p>
-                <a href="https://clipgg.uk/en/teleprompter/" class="btn-secondary">Launch Prompter</a>
-            </div>
-            <div class="card">
-                <span class="badge">AI Math</span>
-                <h3>Hook Generator</h3>
-                <p>Deploy optimized hooks and hook text parameters configured to break retention barriers on modern short-form feeds.</p>
-                <a href="https://clipgg.uk/en/hook-generator/" class="btn-secondary">Generate Hooks</a>
-            </div>
-            
-            <!-- TOOL 11 PLACEHOLDER -->
-            <div class="card" style="border-style: dashed;">
-                <span class="badge" style="color: var(--accent-purple);">Tool 11</span>
-                <h3>[Tool 11 Name]</h3>
-                <p>Enter the precise functional description of your eleventh utility tool here. Keep the tech-focused tone active.</p>
-                <a href="https://clipgg.uk/en/" class="btn-secondary">Open Tool Portal</a>
-            </div>
-            
-            <!-- TOOL 12 PLACEHOLDER -->
-            <div class="card" style="border-style: dashed;">
-                <span class="badge" style="color: var(--accent-purple);">Tool 12</span>
-                <h3>[Tool 12 Name]</h3>
-                <p>Enter the precise functional description of your twelfth utility tool here. Keep the tech-focused tone active.</p>
-                <a href="https://clipgg.uk/en/" class="btn-secondary">Open Tool Portal</a>
-            </div>
-        </div>
-
-        <footer>
-            <p>Authorized Repository Mirror Site. Powered by <a href="https://clipgg.uk">ClipGG</a> Next.js Infrastructure & Cloudflare Pages distribution mapping.</p>
-        </footer>
+        <footer><p>© 2026 ClipGG Systems. Distributed via tools.clipgg.uk architecture routing.</p></footer>
     </div>
-
 </body>
 </html>

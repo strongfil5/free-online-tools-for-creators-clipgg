@@ -3,63 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClipGG Developer Tools Hub - Free Browser Utilities</title>
-    <meta name="description" content="Official alternative high-speed index for ClipGG tools. Access 100% private, free browser-based tools for creators, editors, and writers.">
+    <title>ClipGG Creator Toolkit — Free Browser-Based Video & Text Tools</title>
+    <meta name="description" content="Access the official directory of free, private, client-side utilities for digital creators, editors, and copywriters. Fast, secure, and local-first browser tools.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tools.clipgg.uk/">
+    <meta property="og:title" content="ClipGG Creator Toolkit — Free Browser-Based Tools">
+    <meta property="og:description" content="All-in-one web hub for content creators. 100% free, fast, and secure local-first browser utilities.">
+    
     <style>
-        :root { --bg:#090d16; --card:#131b2e; --border:rgba(255,255,255,0.08); --text:#f3f4f6; --muted:#9ca3af; --purple:#8b5cf6; --blue:#3b82f6; }
-        body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); margin:0; padding:0 20px; }
-        .container { max-width: 900px; margin: 40px auto; }
-        nav { display:flex; gap:15px; border-bottom:1px solid var(--border); padding-bottom:15px; margin-bottom:30px; justify-content:center; flex-wrap:wrap; }
-        nav a { color:var(--muted); text-decoration:none; font-size:14px; font-weight:500; }
-        nav a:hover, nav a.active { color:#fff; text-shadow: 0 0 10px var(--purple); }
-        header { text-align:center; margin-bottom:40px; }
-        h1 { font-size:36px; background:linear-gradient(135deg, #fff, #666); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .hero { background:linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.1)); border:1px solid rgba(139,92,246,0.2); border-radius:12px; padding:30px; text-align:center; margin-bottom:30px; }
-        .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
-        .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; }
-        .card:hover { border-color:var(--purple); transform:translateY(-2px); transition:0.2s; }
-        .btn { display:inline-block; background:linear-gradient(135deg, var(--purple), var(--blue)); color:#fff; text-decoration:none; font-weight:700; padding:12px 24px; border-radius:6px; text-align:center; margin-top:15px; }
-        .btn-sec { background:rgba(255,255,255,0.05); border:1px solid var(--border); font-size:13px; padding:8px; }
-        .btn-sec:hover { border-color:var(--blue); background:rgba(255,255,255,0.1); }
-        footer { margin-top:60px; text-align:center; font-size:12px; color:var(--muted); border-top:1px solid var(--border); padding-top:20px; }
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131c2e;
+            --border-color: rgba(255, 255, 255, 0.06);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --accent-glow: rgba(99, 102, 241, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #818cf8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 25px var(--accent-glow);
+        }
+
+        .card-top {
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            padding-right: 10px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 20px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.925rem;
+            margin-bottom: 20px;
+        }
+
+        .card-action {
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #818cf8;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .card:hover .card-action {
+            gap: 10px;
+            color: #c084fc;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            color: #4b5563;
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #818cf8;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 24px 16px; }
+            header h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <nav>
-            <a href="/" class="active">🏠 Hub</a>
-            <a href="/image-compressor.html">🖼️ Image Compressor</a>
-            <a href="/word-counter.html">📜 Word Counter</a>
-            <a href="/subtitle-tools.html">🧹 Subtitle Tools</a>
-            <a href="/youtube-tools.html">▶️ YT Tools</a>
-        </nav>
         <header>
-            <h1>ClipGG Satellite Network</h1>
-            <p style="color:var(--muted)">High-performance CDN mirror and directory layout mapping.</p>
+            <h1>ClipGG Web Tools Hub</h1>
+            <p>100% private, browser-based client-side utilities optimized for digital video creators, developers, and writers.</p>
         </header>
-        <div class="hero">
-            <h2>Production Application Gateway</h2>
-            <p style="color:var(--muted); font-size:14px;">Looking for the fully responsive localized web layouts? Launch the core application cluster instantly.</p>
-            <a href="https://clipgg.uk/en" class="btn">Go to ClipGG Official Platform 🚀</a>
-        </div>
+
+        <div class="category-title">🎥 Video & Audio Processing</div>
         <div class="grid">
-            <div class="card">
-                <h3>Image Compressor</h3>
-                <p style="color:var(--muted); font-size:13px">Client-side browser batch compressor optimized for modern WebP, PNG, and JPEG structures.</p>
-                <a href="/image-compressor.html" class="btn btn-sec">Explore Node</a>
-            </div>
-            <div class="card">
-                <h3>Word Counter</h3>
-                <p style="color:var(--muted); font-size:13px">Live syntax analyzer mapping word weights, paragraph cuts, and string length metrics.</p>
-                <a href="/word-counter.html" class="btn btn-sec">Explore Node</a>
-            </div>
-            <div class="card">
-                <h3>Subtitle Tools</h3>
-                <p style="color:var(--muted); font-size:13px">SRT to WebVTT matrix translation layers with automated time-code cleaning scripts.</p>
-                <a href="/subtitle-tools.html" class="btn btn-sec">Explore Node</a>
-            </div>
+            
+            <a href="https://clipgg.uk/en/srt-cleaner" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>SRT Subtitle Cleaner</h3>
+                        <span class="badge">Video</span>
+                    </div>
+                    <p>Strip timestamps, metrics, and metadata formatting from caption scripts to instantly retrieve clean, readable text assets.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/srt-vtt-converter" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>SRT ⇄ WebVTT Converter</h3>
+                        <span class="badge">Subtitle</span>
+                    </div>
+                    <p>Convert subtitle file types seamlessly inside your browser tab without uploading files onto third-party web architecture.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/audio-extractor" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Audio Extractor</h3>
+                        <span class="badge">Audio</span>
+                    </div>
+                    <p>Isolate and rip high-fidelity audio tracks and vocals directly out of video elements with lightning-fast processing pipelines.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/video-teleprompter" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Video Teleprompter</h3>
+                        <span class="badge">Production</span>
+                    </div>
+                    <p>Maintain perfect eye contact with your camera using customizable scroll speeds, sizing, and text layout mirrors.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/aspect-ratio-resizer" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Aspect Ratio Resizer</h3>
+                        <span class="badge">Design</span>
+                    </div>
+                    <p>Crop, reframe, and fit media dimensions to conform perfectly with social network configurations like Shorts, Reels, and TikToks.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
         </div>
-        <footer><p>© 2026 ClipGG Systems. Distributed via tools.clipgg.uk architecture routing.</p></footer>
+
+        <div class="category-title">📈 SEO & Platform Optimization</div>
+        <div class="grid">
+
+            <a href="https://clipgg.uk/en/youtube-validator" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>YouTube Title Validator</h3>
+                        <span class="badge">SEO</span>
+                    </div>
+                    <p>Analyze character length limits, pixel visibility thresholds, and optimize title elements against index search snippets.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/youtube-thumbnail-downloader" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Thumbnail Downloader</h3>
+                        <span class="badge">Graphics</span>
+                    </div>
+                    <p>Instantly fetch, view, and save maximum-resolution cover art graphics from any public video node using simple URLs.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/video-hook-generator" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Video Hook Generator</h3>
+                        <span class="badge">Social</span>
+                    </div>
+                    <p>Generate conversion-driven intro frameworks and high-impact phrases designed to maximize viewer retention charts.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/repurpose-machine" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Repurpose Machine</h3>
+                        <span class="badge">AI Content</span>
+                    </div>
+                    <p>Convert core foundational text scripts into distinct multi-channel variations tailored across multiple platforms.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+        </div>
+
+        <div class="category-title">⚙️ Performance & Copywriting</div>
+        <div class="grid">
+
+            <a href="https://clipgg.uk/en/image-compressor" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Bulk Image Compressor</h3>
+                        <span class="badge">Speed</span>
+                    </div>
+                    <p>Optimize JPEG, PNG, and WebP assets natively inside client-side engine runtimes to supercharge web Core Web Vitals scores.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/word-counter" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Text Word Counter</h3>
+                        <span class="badge">Text</span>
+                    </div>
+                    <p>Monitor paragraph structure grids, metrics, character constraints, and real-time density scores on individual word targets.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+            <a href="https://clipgg.uk/en/freelance-email-generator" class="card" target="_blank">
+                <div class="card-top">
+                    <div class="card-header">
+                        <h3>Freelance Email Generator</h3>
+                        <span class="badge">Marketing</span>
+                    </div>
+                    <p>Build cold outreach scripts, professional client responses, and negotiation frameworks engineered to boost close rates.</p>
+                </div>
+                <div class="card-action">Launch Utility <span>&rarr;</span></div>
+            </a>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Powered by Next.js Infrastructure. Main Hub: <a href="https://clipgg.uk" target="_blank">clipgg.uk</a></p>
+        </footer>
     </div>
+
 </body>
 </html>
